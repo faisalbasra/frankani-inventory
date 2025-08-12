@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db";
 import { inventoryItems } from "@/db/schema";
-import { like, or, and, sql } from "drizzle-orm";
+import { like, or } from "drizzle-orm";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
 
   try {
     const searchTerm = `%${query}%`;
-    let whereConditions: any[] = [];
+    let whereConditions: unknown[] = [];
 
     switch (type) {
       case "oem":
