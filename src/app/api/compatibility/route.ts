@@ -4,6 +4,11 @@ import { inventoryItems, compatibleVehicles } from "@/db/schema";
 import { eq, like, or, sql } from "drizzle-orm";
 
 export async function GET(request: NextRequest) {
+  // Skip during build time if environment variables are not available
+  if (!process.env.TURSO_DATABASE_URL) {
+    return NextResponse.json([]);
+  }
+  
   try {
     const { searchParams } = new URL(request.url);
     const filter = searchParams.get("filter") || "all";
