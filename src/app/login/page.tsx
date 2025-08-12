@@ -70,34 +70,28 @@ export default function LoginPage() {
             )}
 
             <div>
-              <label htmlFor="username" className="block text-lg font-medium text-gray-700 mb-2">
+              <label htmlFor="username" className="flex items-center text-lg font-medium text-gray-700 mb-2">
+                <User className="h-5 w-5 text-blue-600 mr-2" />
                 Brukernavn
               </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <User className="h-5 w-5 text-gray-300" />
-                </div>
-                <input
-                  id="username"
-                  name="username"
-                  type="text"
-                  required
-                  value={credentials.username}
-                  onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
-                  className="input-large pl-14 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Skriv inn brukernavn"
-                />
-              </div>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                required
+                value={credentials.username}
+                onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
+                className="input-large px-4 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Skriv inn brukernavn"
+              />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-lg font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="flex items-center text-lg font-medium text-gray-700 mb-2">
+                <Lock className="h-5 w-5 text-blue-600 mr-2" />
                 Passord
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-gray-300" />
-                </div>
                 <input
                   id="password"
                   name="password"
@@ -105,18 +99,19 @@ export default function LoginPage() {
                   required
                   value={credentials.password}
                   onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-                  className="input-large pl-14 pr-12 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="input-large pl-4 pr-12 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Skriv inn passord"
                 />
                 <button
                   type="button"
-                  className="absolute inset-y-0 right-0 pr-4 flex items-center"
+                  className="absolute inset-y-0 right-0 pr-4 flex items-center hover:bg-gray-50 rounded-r-lg transition-colors"
                   onClick={() => setShowPassword(!showPassword)}
+                  title={showPassword ? "Skjul passord" : "Vis passord"}
                 >
                   {showPassword ? (
-                    <EyeOff className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                    <EyeOff className="h-5 w-5 text-gray-500 hover:text-gray-700" />
                   ) : (
-                    <Eye className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                    <Eye className="h-5 w-5 text-gray-500 hover:text-gray-700" />
                   )}
                 </button>
               </div>
