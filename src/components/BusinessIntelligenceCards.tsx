@@ -104,26 +104,26 @@ export default function BusinessIntelligenceCards() {
   if (!stats) return null;
 
   return (
-    <div className="mb-8">
-      {/* Compact Header Bar */}
-      <div className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-lg border border-slate-200 overflow-hidden shadow-sm">
+    <div className="mb-12">
+      {/* Compact Header Bar - Enhanced Visual Hierarchy */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-100 overflow-hidden shadow-lg ring-1 ring-blue-200/30">
         {/* Toggle Header */}
         <button
           onClick={toggleExpanded}
           onKeyDown={(e) => handleKeyPress(e, toggleExpanded)}
-          className="w-full px-6 py-4 flex items-center justify-between hover:bg-slate-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+          className="w-full px-8 py-6 flex items-center justify-between hover:bg-blue-100/50 transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-blue-500 focus:ring-inset"
           aria-expanded={isExpanded}
           aria-label="Toggle business intelligence overview"
         >
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <TrendingUp className="h-6 w-6 text-blue-600" />
-              <h2 className="text-xl font-semibold text-slate-800">📊 Forretningsoversikt</h2>
+              <h2 className="text-2xl font-bold text-blue-900">📊 Forretningsoversikt</h2>
             </div>
             
             {/* Quick Stats Preview (when collapsed) */}
             {!isExpanded && (
-              <div className="hidden lg:flex items-center space-x-6 text-sm">
+              <div className="hidden md:flex items-center space-x-4 lg:space-x-6 text-sm lg:text-base">
                 <div className="flex items-center space-x-1">
                   <DollarSign className="h-4 w-4 text-green-600" />
                   <span className="text-green-700 font-medium">
@@ -153,7 +153,7 @@ export default function BusinessIntelligenceCards() {
           </div>
           
           <div className="flex items-center space-x-2">
-            <span className="text-sm text-slate-600 hidden sm:block">
+            <span className="text-base font-medium text-blue-700 hidden sm:block">
               {isExpanded ? "Skjul detaljer" : "Vis detaljer"}
             </span>
             {isExpanded ? (
@@ -170,9 +170,9 @@ export default function BusinessIntelligenceCards() {
             isExpanded ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="px-6 pb-6 bg-white">
-            {/* Card Selection Tabs */}
-            <div className="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-3">
+          <div className="px-8 pb-8 bg-white">
+            {/* Card Selection Tabs - Enhanced Click Targets */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-6 border-b border-slate-200 pb-4">
               {[
                 { id: 0, icon: DollarSign, label: "💰 Økonomi", color: "green" },
                 { id: 1, icon: BarChart3, label: "📊 Fordeling", color: "blue" },
@@ -182,14 +182,14 @@ export default function BusinessIntelligenceCards() {
                   key={tab.id}
                   onClick={() => handleCardClick(tab.id)}
                   onKeyDown={(e) => handleKeyPress(e, () => handleCardClick(tab.id))}
-                  className={`flex items-center space-x-2 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                  className={`flex items-center justify-center sm:justify-start space-x-3 px-6 py-4 rounded-xl text-base sm:text-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-offset-2 min-h-[48px] w-full sm:w-auto ${
                     activeCard === tab.id
                       ? `bg-${tab.color}-100 text-${tab.color}-800 border-2 border-${tab.color}-300 shadow-sm`
                       : `bg-white text-slate-600 border border-slate-200 hover:bg-${tab.color}-50 hover:text-${tab.color}-700 hover:border-${tab.color}-200`
                   }`}
                   aria-pressed={activeCard === tab.id}
                 >
-                  <tab.icon className="h-4 w-4" />
+                  <tab.icon className="h-6 w-6" />
                   <span>{tab.label}</span>
                 </button>
               ))}
