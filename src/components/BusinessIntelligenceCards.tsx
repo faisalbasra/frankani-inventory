@@ -115,7 +115,7 @@ export default function BusinessIntelligenceCards() {
               <span className="font-medium">{formatCurrency(stats.financial.averagePartValue)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Høy verdi (>1000kr):</span>
+              <span className="text-gray-600">Hoy verdi (&gt;1000kr):</span>
               <span className="font-medium text-green-600">{formatNumber(stats.financial.highValueParts)}</span>
             </div>
             {stats.financial.zeroPriceParts > 0 && (
