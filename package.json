@@ -1,7 +1,16 @@
 {
   "name": "frankani-inventory",
   "version": "0.1.0",
+  "description": "Norwegian car parts inventory management system optimized for 60+ year old users with automated Polcar compatibility integration",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faisalbasra/frankani-inventory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/faisalbasra/frankani-inventory/issues"
+  },
+  "homepage": "https://github.com/faisalbasra/frankani-inventory#readme",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

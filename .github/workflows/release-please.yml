@@ -1,0 +1,42 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          # This specifies which package(s) should be released
+          release-type: node
+          # Optional: specify which package.json to bump (defaults to root)
+          package-name: frankani-inventory
+          # Optional: changelog configuration
+          changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"docs","section":"Documentation","hidden":false},{"type":"style","section":"Styles","hidden":false},{"type":"refactor","section":"Code Refactoring","hidden":false},{"type":"perf","section":"Performance Improvements","hidden":false},{"type":"test","section":"Tests","hidden":false},{"type":"build","section":"Build System","hidden":false},{"type":"ci","section":"Continuous Integration","hidden":false},{"type":"chore","section":"Other Changes","hidden":true}]'
+
+      # Optional: Build and deploy when a release is created
+      # Uncomment and modify if you want automatic deployment
+      # - name: Build and Deploy
+      #   if: ${{ steps.release.outputs.release_created }}
+      #   run: |
+      #     npm ci
+      #     npm run build
+      #     # Add your deployment commands here
+      
+      # Optional: Create a GitHub release with assets
+      - name: Upload Release Assets
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Release created: ${{ steps.release.outputs.tag_name }}"
+          echo "Release notes updated in CHANGELOG.md"
