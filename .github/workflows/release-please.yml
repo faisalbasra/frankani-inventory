@@ -20,6 +20,8 @@ jobs:
           # Use manifest-based config files
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
+          # Use either GITHUB_TOKEN or custom token for proper permissions
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
 
       # Optional: Build and deploy when a release is created
       # Uncomment and modify if you want automatic deployment
