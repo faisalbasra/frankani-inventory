@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Search, Package, Car, CheckCircle, List, Settings, Plus } from "lucide-react";
+import BusinessIntelligenceCards from "@/components/BusinessIntelligenceCards";
 
 interface DashboardStats {
   totalParts: number;
@@ -40,14 +41,17 @@ export default function Home() {
   };
   return (
     <div className="space-y-8">
-      <div className="text-center py-8">
+      <div className="text-center py-6">
         <h2 className="text-2xl font-semibold text-slate-700 mb-4">
           Velkommen til Frankani Delssystem
         </h2>
         <p className="text-lg text-slate-600">
-          Velg en funksjon nedenfor for å komme i gang
+          Oversikt og hurtigvalg for lagerstyring
         </p>
       </div>
+
+      {/* Business Intelligence Cards */}
+      <BusinessIntelligenceCards />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <Link
