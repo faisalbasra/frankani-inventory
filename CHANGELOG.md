@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0](https://github.com/faisalbasra/frankani-inventory/compare/frankani-inventory-v0.2.0...frankani-inventory-v0.3.0) (2025-08-20)
+
+
+### Features
+
+* add comprehensive business intelligence dashboard cards ([7218e5a](https://github.com/faisalbasra/frankani-inventory/commit/7218e5aadb8f309a465e3e9dd526004b9f743cd8))
+* optimize card design and responsiveness based on design review ([b1456df](https://github.com/faisalbasra/frankani-inventory/commit/b1456df97bd4b0a1f20b21a9bbe5dd4357ec926d))
+* revolutionary business intelligence dashboard with collapsible design ([0c7d83c](https://github.com/faisalbasra/frankani-inventory/commit/0c7d83c4345c274320a589aea7e9da7c8c4a42ab))
+* transform BI cards into stunning collapsible interactive interface ([9367034](https://github.com/faisalbasra/frankani-inventory/commit/9367034ccd30c787643ed959ebfe9e9ce75bfa4f))
+
+
+### Bug Fixes
+
+* resolve Norwegian character encoding issue in BI cards ([3035653](https://github.com/faisalbasra/frankani-inventory/commit/3035653fabc676a38b26a31b2decb0f8666ae7d7))
+
 ## [0.2.0](https://github.com/faisalbasra/frankani-inventory/compare/frankani-inventory-v0.1.0...frankani-inventory-v0.2.0) (2025-08-20)
 
 
